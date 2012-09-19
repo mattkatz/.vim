@@ -44,7 +44,7 @@ filetype plugin indent on
 
 "colors!
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 " ---------------
 " UI
 " ---------------
