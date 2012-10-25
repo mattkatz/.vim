@@ -98,3 +98,18 @@ set mouse=a " Mouse in all modes
 
 " Better complete options to speed it up
 set complete=.,w,b,u,U
+
+
+
+"if has('gui_running')
+  "Display Hidden Characters
+  "http://en.wikipedia.org/wiki/Unicode_Geometric_Shapes
+  "http://www.joelonsoftware.com/articles/Unicode.html
+  set list
+  set listchars=tab:▶\ ,eol:★
+  set listchars+=trail:◥
+  set listchars+=extends:❯
+  set listchars+=precedes:❮
+  "vertical splits less gap between bars
+  set fillchars+=vert:│
+"endif
