@@ -16,10 +16,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-surround'
+Bundle 'sjl/gundo.vim'
 "UI
 Bundle 'Rykka/colorv.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'mutewinter/vim-indent-guides'
+Bundle 'mhinz/vim-startify'
 "autohelpers
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
@@ -99,6 +101,10 @@ set mouse=a " Mouse in all modes
 " Better complete options to speed it up
 set complete=.,w,b,u,U
 
+" ---------------
+"  GUNDO
+" ---------------
+nnoremap <F5> :GundoToggle<CR>
 
 
 "if has('gui_running')
