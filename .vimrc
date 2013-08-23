@@ -21,6 +21,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'Rykka/colorv.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'mutewinter/vim-indent-guides'
+"better start screen - manage sessions
 Bundle 'mhinz/vim-startify'
 "autohelpers
 Bundle 'scrooloose/syntastic'
@@ -40,6 +41,16 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'nono/vim-handlebars'
 " css
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+" working with CSV files - brilliant
+Bundle 'chrisbra/csv.vim'
+" Better satusline
+Bundle 'bling/vim-airline
+"colorize my parens so that I can tell what's in what
+Bundle 'kien/rainbow_parentheses.vim
+" add cmdline, yankring and menu extensions to ctrlp
+Bundle 'sgur/ctrlp-extensions.vim
+"Yankring
+Bundle 'vim-scripts/YankRing.vim
 
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
@@ -52,7 +63,7 @@ colorscheme solarized
 " ---------------
 set ruler " Ruler on
 set nu " Line numbers on
-set nowrap " Line wrapping off
+set wrap " Line wrapping off
 set laststatus=2 " Always show the statusline
 
 " ---------------
@@ -119,3 +130,32 @@ nnoremap <F5> :GundoToggle<CR>
   "vertical splits less gap between bars
   set fillchars+=vert:│
 "endif
+
+" ------------------
+" Numbering
+" ------------------
+function ChangeNumbering()
+  if &relativenumber
+	  set number
+  else
+	  if &number
+		  set nonumber
+	  else
+		  set relativenumber
+	  endif
+  endif
+endfunction
+"numbering
+nnoremap <leader>n :call ChangeNumbering()<CR>
+
+
+"I like help to open in a vertical split rather than a horizontal one
+command -nargs=* -complete=help Help vertical belowright help <args>
+
+let mapleader=","
+"window management
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
