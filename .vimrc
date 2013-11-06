@@ -44,13 +44,13 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 " working with CSV files - brilliant
 Bundle 'chrisbra/csv.vim'
 " Better satusline
-Bundle 'bling/vim-airline
+Bundle 'bling/vim-airline'
 "colorize my parens so that I can tell what's in what
-Bundle 'kien/rainbow_parentheses.vim
+Bundle 'kien/rainbow_parentheses.vim'
 " add cmdline, yankring and menu extensions to ctrlp
-Bundle 'sgur/ctrlp-extensions.vim
+Bundle 'sgur/ctrlp-extensions.vim'
 "Yankring
-Bundle 'vim-scripts/YankRing.vim
+Bundle 'vim-scripts/YankRing.vim'
 
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
