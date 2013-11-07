@@ -1,6 +1,16 @@
 "ln -s ~/.vim/.vimrc ~/.vimrc
 set nocompatible               " be iMproved
 filetype off                   " required!
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -20,7 +30,7 @@ Bundle 'sjl/gundo.vim'
 "UI
 Bundle 'Rykka/colorv.vim'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'mutewinter/vim-indent-guides'
+Bundle 'nathanaelkane/vim-indent-guides'
 "better start screen - manage sessions
 Bundle 'mhinz/vim-startify'
 "Golden ratio resizes splits so your focused window gets the most screen
@@ -30,8 +40,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'Shougo/neocomplcache'
 "snippets
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+"Both these are out of fashion and I don't have time to figure it out
+"Bundle 'garbas/vim-snipmate'
+"Bundle 'honza/snipmate-snippets'
+
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 "languages
@@ -53,6 +65,16 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'sgur/ctrlp-extensions.vim'
 "Yankring
 Bundle 'vim-scripts/YankRing.vim'
+"Zen Coding AKA Emmet
+Bundle "mattn/emmet-vim"
+
+"...All your other bundles...
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+
 
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
