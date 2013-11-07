@@ -26,6 +26,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-surround'
+"<leader>u
 Bundle 'sjl/gundo.vim'
 "UI
 
@@ -167,14 +168,14 @@ let mapleader=","
 " ------------------
 function ChangeNumbering()
   if &relativenumber
-	  set norelativenumber
+    set norelativenumber
     set number
   else
-	  if &number
-		  set nonumber
-	  else
-		  set relativenumber
-	  endif
+    if &number
+      set nonumber
+    else
+      set relativenumber
+    endif
   endif
 endfunction
 "numbering
@@ -193,3 +194,5 @@ nnoremap <C-l> <C-w>l
 
 " Rainbow parentheses toggle
 nnoremap <leader>r :call RainbowParenthesesToggle 
+
+nnoremap <leader>u :GundoToggle<CR>
