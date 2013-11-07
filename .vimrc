@@ -28,10 +28,16 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'sjl/gundo.vim'
 "UI
+
+"Amazing colorpicker
+"<leader>ce on a color to edit that color
+"<leader>cii to insert a color
 Bundle 'Rykka/colorv.vim'
 Bundle 'nanotech/jellybeans.vim'
+"<leader> ig to turn indent guides on and off
 Bundle 'nathanaelkane/vim-indent-guides'
 "better start screen - manage sessions
+":Startify to trigger
 Bundle 'mhinz/vim-startify'
 "Golden ratio resizes splits so your focused window gets the most screen
 Bundle 'roman/golden-ratio'
