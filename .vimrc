@@ -23,6 +23,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
+"<leader><leader>e or w or b etc.
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-surround'
@@ -44,8 +45,8 @@ Bundle 'mhinz/vim-startify'
 Bundle 'roman/golden-ratio'
 "autohelpers
 Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-Bundle 'Shougo/neocomplcache'
+"Bundle 'ervandew/supertab'
+"Bundle 'Shougo/neocomplcache'
 "snippets
 "Both these are out of fashion and I don't have time to figure it out
 "Bundle 'garbas/vim-snipmate'
