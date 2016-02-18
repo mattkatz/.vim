@@ -76,6 +76,19 @@ Bundle 'vim-scripts/YankRing.vim'
 "Zen Coding AKA Emmet
 Bundle "mattn/emmet-vim"
 
+"ColorSchemes
+"Base-16
+Bundle 'chriskempson/base16-vim'
+"Tomorrow
+Bundle 'Slava/vim-colors-tomorrow'
+
+
+"Dash is the best way to look up docs on osx
+" use :Dash <searchterm> to search in this filetype or :Dash inject underscore
+" or :Dash! <searchterm> to search all docs
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
 "...All your other bundles...
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -89,7 +102,7 @@ filetype plugin indent on
 
 "colors!
 set background=dark
-colorscheme solarized
+colorscheme zenburn
 " ---------------
 " UI
 " ---------------
