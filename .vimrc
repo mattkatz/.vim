@@ -1,104 +1,96 @@
 "ln -s ~/.vim/.vimrc ~/.vimrc
 set nocompatible               " be iMproved
-filetype off                   " required!
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
+"filetype off                   " required!
+
+" Install vim-plug if we don't arlready have it
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
-" My Bundles here:
+" My Plugs here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 "<leader><leader>e or w or b etc.
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-surround'
+Plug 'Lokaltog/vim-easymotion'
+" Plug 'kien/ctrlp.vim'
+" Replacing ctrlp with fzf
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install
+" script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"   " Both options are optional. You don't have to install fzf in ~/.fzf
+"     " and you don't have to run the install script if you use fzf only in
+"     Vim.
+Plug 'tpope/vim-surround'
 "<leader>u
-Bundle 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 "UI
 
 "Amazing colorpicker
 "<leader>ce on a color to edit that color
 "<leader>cii to insert a color
-Bundle 'Rykka/colorv.vim'
-Bundle 'nanotech/jellybeans.vim'
+Plug 'Rykka/colorv.vim'
+Plug 'nanotech/jellybeans.vim'
 "<leader> ig to turn indent guides on and off
-Bundle 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 "better start screen - manage sessions
 ":Startify to trigger
-Bundle 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 "Golden ratio resizes splits so your focused window gets the most screen
-Bundle 'roman/golden-ratio'
+Plug 'roman/golden-ratio'
 "autohelpers
-Bundle 'scrooloose/syntastic'
-"Bundle 'ervandew/supertab'
-"Bundle 'Shougo/neocomplcache'
+" Plug 'scrooloose/syntastic'
+"Plug 'ervandew/supertab'
+"Plug 'Shougo/neocomplcache'
 "snippets
 "Both these are out of fashion and I don't have time to figure it out
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'honza/snipmate-snippets'
+"Plug 'garbas/vim-snipmate'
+"Plug 'honza/snipmate-snippets'
 
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 "languages
 "javascript
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'leshill/vim-json'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'nono/vim-handlebars'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leshill/vim-json'
+Plug 'itspriddle/vim-jquery'
+Plug 'nono/vim-handlebars'
 " css
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Plug 'ChrisYip/Better-CSS-Syntax-for-Vim'
 " working with CSV files - brilliant
-Bundle 'chrisbra/csv.vim'
+Plug 'chrisbra/csv.vim'
 " Better satusline
-Bundle 'bling/vim-airline'
+Plug 'bling/vim-airline'
 "colorize my parens so that I can tell what's in what
-Bundle 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 " add cmdline, yankring and menu extensions to ctrlp
-Bundle 'sgur/ctrlp-extensions.vim'
+" Plug 'sgur/ctrlp-extensions.vim'
 "Yankring
-Bundle 'vim-scripts/YankRing.vim'
+"Plug 'vim-scripts/YankRing.vim'
 "Zen Coding AKA Emmet
-Bundle "mattn/emmet-vim"
+Plug 'mattn/emmet-vim'
 
 "ColorSchemes
 "Base-16
-Bundle 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 "Tomorrow
-Bundle 'Slava/vim-colors-tomorrow'
+Plug 'Slava/vim-colors-tomorrow'
 
 
 "Dash is the best way to look up docs on osx
 " use :Dash <searchterm> to search in this filetype or :Dash inject underscore
 " or :Dash! <searchterm> to search all docs
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Plug 'rizzatti/funcoo.vim'
+Plug 'rizzatti/dash.vim'
 
-"...All your other bundles...
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
+call plug#end()
 
-
-" Automatically detect file types. (must turn on after Vundle)
-filetype plugin indent on
 
 "colors!
 set background=dark
@@ -210,3 +202,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>r :call RainbowParenthesesToggle 
 
 nnoremap <leader>u :GundoToggle<CR>
+
+"ctrlp for fzf
+nnoremap <C-p> :FZF<CR>
