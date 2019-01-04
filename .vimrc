@@ -44,7 +44,8 @@ Bundle 'mhinz/vim-startify'
 "Golden ratio resizes splits so your focused window gets the most screen
 Bundle 'roman/golden-ratio'
 "autohelpers
-Bundle 'scrooloose/syntastic'
+"disabling syntastic for performance w python - need to investigate ALE
+"Bundle 'scrooloose/syntastic'
 "Bundle 'ervandew/supertab'
 "Bundle 'Shougo/neocomplcache'
 "snippets
@@ -207,6 +208,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Rainbow parentheses toggle
-nnoremap <leader>r :call RainbowParenthesesToggle 
+nnoremap <leader>r :call RainbowParenthesesToggle
 
 nnoremap <leader>u :GundoToggle<CR>
