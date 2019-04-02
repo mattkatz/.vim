@@ -55,16 +55,12 @@ Plug 'roman/golden-ratio'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 "languages
-"javascript
-Plug 'pangloss/vim-javascript'
-Plug 'kchmck/vim-coffee-script'
-Plug 'leshill/vim-json'
-Plug 'itspriddle/vim-jquery'
-Plug 'nono/vim-handlebars'
+" Python
+Plug 'heavenshell/vim-pydocstring'
+" MANY MANY good defaults
+Plug 'sheerun/vim-polyglot'
 " css
 Plug 'ChrisYip/Better-CSS-Syntax-for-Vim'
-" working with CSV files - brilliant
-Plug 'chrisbra/csv.vim'
 " Better satusline
 Plug 'bling/vim-airline'
 "colorize my parens so that I can tell what's in what
@@ -205,3 +201,7 @@ nnoremap <leader>u :GundoToggle<CR>
 
 "ctrlp for fzf
 nnoremap <C-p> :FZF<CR>
+
+"heavenshell/vim-pydocstring
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+nmap <silent> <C-_> <Plug>(pydocstring)
