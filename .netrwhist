@@ -1,6 +1,1 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/etc/apache2/sites-available'
-let g:netrw_dirhist_2='/codemill/katzm/trm/utility/add-metrics-jiras/.idea'
-let g:netrw_dirhist_3='/codemill/katzm/frames/test/test_etc'
-let g:netrw_dirhist_4='/codemill/katzm/trm/utility/clone_to_tech_tracker'
