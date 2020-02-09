@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
 "
 " original repos on github
 Plug 'tpope/vim-fugitive'
+" press gcc to comment a line or gc to comment the highlighted text
+Plug 'tpope/vim-commentary'
 "<leader><leader>e or w or b etc.
 Plug 'Lokaltog/vim-easymotion'
 " Plug 'kien/ctrlp.vim'
