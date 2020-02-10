@@ -31,6 +31,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-surround'
 "<leader>u
 Plug 'sjl/gundo.vim'
+
+
 "UI
 
 "Amazing colorpicker
@@ -57,7 +59,9 @@ Plug 'roman/golden-ratio'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-"languages
+
+
+" languages
 " Python
 Plug 'heavenshell/vim-pydocstring'
 " MANY MANY good defaults
@@ -74,6 +78,9 @@ Plug 'kien/rainbow_parentheses.vim'
 "Plug 'vim-scripts/YankRing.vim'
 "Zen Coding AKA Emmet
 Plug 'mattn/emmet-vim'
+
+" ALE is an async lint engine. 
+Plug 'dense-analysis/ale'
 
 "ColorSchemes
 "Base-16
@@ -208,3 +215,17 @@ nnoremap <C-p> :FZF<CR>
 "heavenshell/vim-pydocstring
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 nmap <silent> <C-_> <Plug>(pydocstring)
+
+" ---------------
+"  ALE 
+" ---------------
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint'],
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+let g:ale_fixers = {
+      \    'python': ['black'],
+      \}
+nmap <F10> :ALEFix<CR>
+let g:ale_fix_on_save = 1
