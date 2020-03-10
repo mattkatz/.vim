@@ -76,8 +76,6 @@ Plug 'roman/golden-ratio'
 "
 Plug 'kshenoy/vim-signature'
 "autohelpers
-"disabling syntastic for performance w python - need to investigate ALE
-" Plug 'scrooloose/syntastic'
 "Plug 'ervandew/supertab'
 "Plug 'Shougo/neocomplcache'
 "snippets
