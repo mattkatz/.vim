@@ -100,8 +100,6 @@ Plug 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Plug 'bling/vim-airline'
 "colorize my parens so that I can tell what's in what
 Plug 'kien/rainbow_parentheses.vim'
-" add cmdline, yankring and menu extensions to ctrlp
-" Plug 'sgur/ctrlp-extensions.vim'
 "Yankring
 "Plug 'vim-scripts/YankRing.vim'
 "Zen Coding AKA Emmet
