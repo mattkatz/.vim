@@ -14,7 +14,11 @@ call plug#begin('~/.vim/plugged')
 
 " My Plugs here:
 "
-" original repos on github
+" awesome git integration
+" :G brings up git status window
+" - stage or unstage file or hunk
+" = toggle an inline diff of the file under the cursor
+" cc create a commit
 Plug 'tpope/vim-fugitive'
 " press gcc to comment a line or gc to comment the highlighted text
 Plug 'tpope/vim-commentary'
