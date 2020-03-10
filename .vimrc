@@ -83,7 +83,9 @@ Plug 'kshenoy/vim-signature'
 "Plug 'garbas/vim-snipmate'
 "Plug 'honza/snipmate-snippets'
 
+" interpret a file by function and cache file automatically
 Plug 'MarcWeber/vim-addon-mw-utils'
+" utility functions - supports other plugins
 Plug 'tomtom/tlib_vim'
 
 
