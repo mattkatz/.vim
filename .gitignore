@@ -2,3 +2,4 @@ session/*
 bundle/*
 autoload/*
 plugged/*
+.netrwhist
