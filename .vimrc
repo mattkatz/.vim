@@ -103,7 +103,10 @@ Plug 'ChrisYip/Better-CSS-Syntax-for-Vim'
 " Better satusline
 Plug 'bling/vim-airline'
 "colorize my parens so that I can tell what's in what
-Plug 'kien/rainbow_parentheses.vim'
+" kien's plugin isn't working...
+" Plug 'kien/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 "Yankring
 "Plug 'vim-scripts/YankRing.vim'
 "Zen Coding AKA Emmet
@@ -236,9 +239,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Rainbow parentheses toggle
-nnoremap <leader>r :call RainbowParenthesesToggle
 
 nnoremap <leader>u :GundoToggle<CR>
 
