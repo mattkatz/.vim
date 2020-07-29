@@ -136,7 +136,8 @@ call plug#end()
 
 "colors!
 set background=dark
-colorscheme zenburn
+" colorscheme zenburn
+colorscheme ThemerVim
 " ---------------
 " UI
 " ---------------
