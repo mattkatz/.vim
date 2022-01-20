@@ -136,7 +136,13 @@ call plug#end()
 
 "colors!
 set background=dark
-colorscheme zenburn
+" Use themer if installed
+try 
+  colorschem ThemerVim
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme zenburn
+endtry
+
 " ---------------
 " UI
 " ---------------
