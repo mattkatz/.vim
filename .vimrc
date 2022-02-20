@@ -253,7 +253,8 @@ nnoremap <C-p> :FZF<CR>
 
 "heavenshell/vim-pydocstring
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-nmap <silent> <C-_> <Plug>(pydocstring)
+" nmap <silent> <C-_> <Plug>(pydocstring)
+nmap <silent> <leader>d <Plug>(pydocstring)
 
 " ---------------
 "  ALE 
