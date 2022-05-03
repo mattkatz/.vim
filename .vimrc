@@ -1,6 +1,7 @@
 "ln -s ~/.vim/.vimrc ~/.vimrc
 set nocompatible               " be iMproved
 "filetype off                   " required!
+let mapleader=","
 
 " Install vim-plug if we don't arlready have it
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -20,6 +21,10 @@ call plug#begin('~/.vim/plugged')
 " = toggle an inline diff of the file under the cursor
 " cc create a commit
 Plug 'tpope/vim-fugitive'
+
+" Dasht is an offline docs viewer similar to dash and zeal
+Plug 'sunaku/vim-dasht'
+
 " press gcc to comment a line or gc to comment the highlighted text
 Plug 'tpope/vim-commentary'
 "<leader><leader>e or w or b etc.
@@ -95,7 +100,9 @@ Plug 'tomtom/tlib_vim'
 
 " languages
 " Python
+" ,d to create a docstring
 Plug 'heavenshell/vim-pydocstring'
+nmap <silent> <leader>d <Plug>(pydocstring)
 " MANY MANY good defaults
 Plug 'sheerun/vim-polyglot'
 " css
@@ -216,7 +223,6 @@ nnoremap <F5> :GundoToggle<CR>
   set fillchars+=vert:│
 "endif
 
-let mapleader=","
 " ------------------
 " Numbering
 " ------------------
@@ -254,7 +260,6 @@ nnoremap <C-p> :FZF<CR>
 "heavenshell/vim-pydocstring
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 " nmap <silent> <C-_> <Plug>(pydocstring)
-nmap <silent> <leader>d <Plug>(pydocstring)
 
 " ---------------
 "  ALE 
@@ -268,6 +273,7 @@ let g:ale_fixers = {
       \    'python': ['black'],
       \}
 nmap <F10> :ALEFix<CR>
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
 let g:ale_fix_on_save = 1
 
 
@@ -400,3 +406,21 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+"-----------------------
+"|  Dasht              |
+"-----------------------
+" Search docsets for something you type:
+" search related docsets
+nnoremap <Leader>k :Dasht<Space>
+" search ALL the docsets
+nnoremap <Leader><Leader>k :Dasht!<Space>
+
+" Search docsets for words under cursor:
+" search related docsets
+nnoremap <silent> <Leader>K :call Dasht(dasht#cursor_search_terms())<Return>
+" search ALL the docsets
+nnoremap <silent> <Leader><Leader>K :call Dasht(dasht#cursor_search_terms(), '!')<Return>
+
+
