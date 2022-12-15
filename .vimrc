@@ -428,5 +428,10 @@ nnoremap <Leader><Leader>k :Dasht!<Space>
 nnoremap <silent> <Leader>K :call Dasht(dasht#cursor_search_terms())<Return>
 " search ALL the docsets
 nnoremap <silent> <Leader><Leader>K :call Dasht(dasht#cursor_search_terms(), '!')<Return>
-
+" Specify related docsets for searching
+let g:dasht_filetype_docsets = {} " filetype => list of docset name regexp
+" when in python, also search pytest
+let g:dasht_filetype_docsets['python'] = [ 'pytest']
+" When in HTML, also search CSS, JavaScript 
+let g:dasht_filetype_docsets['html'] = ['css', 'js']
 
