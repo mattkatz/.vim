@@ -213,6 +213,7 @@ set complete=.,w,b,u,U
 "  GUNDO
 " ---------------
 nnoremap <F5> :GundoToggle<CR>
+let g:gundo_prefer_python3=1
 
 
 "if has('gui_running')
