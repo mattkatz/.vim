@@ -138,6 +138,11 @@ Plug 'Slava/vim-colors-tomorrow'
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
 
+" NVIM stuff!
+if has('nvim')
+  Plug 'https://github.com/heittpr/p5.vim'
+endif
+
 call plug#end()
 
 
